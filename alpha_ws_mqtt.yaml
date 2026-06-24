@@ -1,0 +1,188 @@
+alpha:
+  host: "192.168.18.100"
+  port: 8214
+  path: ""
+  scheme: "ws"
+  subprotocols:
+    - "Lux_WS"
+
+  login_message: "LOGIN;999999"
+  information_menu_name: "Informatie"
+
+  startup_delay_seconds: 0.5
+  refresh_interval_seconds: 10
+  socket_timeout_seconds: 2
+  reconnect_delay_seconds: 10
+  log_raw_chars: 400
+
+mqtt:
+  host: "192.168.18.253"
+  port: 1883
+  username: ""
+  password: ""
+  base_topic: "alpha_innotec"
+  retain: true
+  client_id: "alpha-innotec-ws-mqtt"
+  discovery: true
+  discovery_prefix: "homeassistant"
+
+values:
+  - section_path: ["Informatie", "Energiemonitor", "Gebruikte energie"]
+    name: "Koeling"
+    occurrence: 1
+    label: "gebruikte_energie_koeling"
+    display_name: "Gebruikte energie koeling WP"
+    topic: "alpha_innotec/gebruikte_energie_koeling/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+
+  - section_path: ["Informatie", "Installatiestatus"]
+    name: "Luchtvochtigheid ruimte"
+    occurrence: 1
+    label: "luchtvochtigheid_ruimte"
+    display_name: "Luchtvochtigheid WP"
+    topic: "alpha_innotec/luchtvochtigheid_ruimte/state"
+    unit: "%"
+    device_class: "humidity"
+    state_class: "measurement"
+
+  - section_path: ["Informatie", "Ingangen"]
+    name: "Debiet"
+    occurrence: 1
+    label: "debiet"
+    display_name: "Debiet WP"
+    topic: "alpha_innotec/debiet/state"
+    unit: "l/h"
+    device_class: ""
+    state_class: ""
+    
+  - section: "Bedrijfsuren"
+    name: "Bedrijfsuren WP"
+    occurrence: 1
+    label: "bedrijfsuren_wp"
+    display_name: "Bedrijfsuren WP Totaal"
+    topic: "alpha_innotec/bedrijfsuren_wp/state"
+    unit: "h"
+    device_class: ""
+    state_class: "total_increasing"
+    
+  - section: "Bedrijfsuren"
+    name: "Bedrijfsuren verw."
+    occurrence: 1
+    label: "bedrijfsuren_verwarming"
+    display_name: "Bedrijfsuren verwarming"
+    topic: "alpha_innotec/bedrijfsuren_verwarming/state"
+    unit: "h"
+    device_class: ""
+    state_class: "total_increasing"
+  
+  - section: "Bedrijfsuren"
+    name: "Bedrijfsuren TW"
+    occurrence: 1
+    label: "bedrijfsuren_tapwater"
+    display_name: "Bedrijfsuren tapwater"
+    topic: "alpha_innotec/bedrijfsuren_tapwater/state"
+    unit: "h"
+    device_class: ""
+    state_class: "total_increasing"
+  
+  - section: "Bedrijfsuren"
+    name: "Bedrijfsuren koeling"
+    occurrence: 1
+    label: "bedrijfsuren_koeling"
+    display_name: "Bedrijfsuren koeling"
+    topic: "alpha_innotec/bedrijfsuren_koeling/state"
+    unit: "h"
+    device_class: ""
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Energie"]
+    name: "Verwarmen"
+    occurrence: 1
+    label: "energie_verwarmen"
+    display_name: "Energie verwarmen WP"
+    topic: "alpha_innotec/energie_verwarmen/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Energie"]
+    name: "Warmwater"
+    occurrence: 1
+    label: "energie_warmwater"
+    display_name: "Energie warmwater WP"
+    topic: "alpha_innotec/energie_warmwater/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Energie"]
+    name: "Koeling"
+    occurrence: 1
+    label: "energie_koeling"
+    display_name: "Energie koeling WP"
+    topic: "alpha_innotec/energie_koeling/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Energie"]
+    name: "Gezamelijk"
+    occurrence: 1
+    label: "energie_gezamelijk"
+    display_name: "Energie gezamelijk WP"
+    topic: "alpha_innotec/energie_gezamelijk/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Gebruikte energie"]
+    name: "Verwarmen"
+    occurrence: 1
+    label: "gebruikte_energie_verwarmen"
+    display_name: "Gebruikte energie verwarmen WP"
+    topic: "alpha_innotec/gebruikte_energie_verwarmen/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Gebruikte energie"]
+    name: "Warmwater"
+    occurrence: 1
+    label: "gebruikte_energie_warmwater"
+    display_name: "Gebruikte energie warmwater WP"
+    topic: "alpha_innotec/gebruikte_energie_warmwater/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Gebruikte energie"]
+    name: "Koeling"
+    occurrence: 1
+    label: "gebruikte_energie_koeling"
+    display_name: "Gebruikte energie koeling WP"
+    topic: "alpha_innotec/gebruikte_energie_koeling/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section_path: ["Energiemonitor", "Gebruikte energie"]
+    name: "Gezamelijk"
+    occurrence: 1
+    label: "gebruikte_energie_gezamelijk"
+    display_name: "Gebruikte energie gezamelijk WP"
+    topic: "alpha_innotec/gebruikte_energie_gezamelijk/state"
+    unit: "kWh"
+    device_class: "energy"
+    state_class: "total_increasing"
+  
+  - section: "Installatiestatus"
+    name: "Bedrijfstoestand"
+    occurrence: 1
+    label: "bedrijfstoestand"
+    display_name: "Bedrijfstoestand WP"
+    topic: "alpha_innotec/bedrijfstoestand/state"
+    unit: ""
+    device_class: ""
+    state_class: ""

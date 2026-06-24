@@ -1,0 +1,17 @@
+[Unit]
+Description=Alpha Innotec Luxtronik WebSocket to MQTT
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/alpha_ws_mqtt
+ExecStart=/usr/bin/python3 /home/pi/alpha_ws_mqtt/alpha_ws_mqtt.py -c /home/pi/alpha_ws_mqtt/alpha_ws_mqtt.yaml
+Restart=always
+RestartSec=10
+User=pi
+Group=pi
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
